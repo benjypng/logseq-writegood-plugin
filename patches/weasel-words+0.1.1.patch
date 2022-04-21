@@ -1,0 +1,12 @@
+diff --git a/node_modules/weasel-words/weasel.js b/node_modules/weasel-words/weasel.js
+index a6bc8c4..915c8ff 100644
+--- a/node_modules/weasel-words/weasel.js
++++ b/node_modules/weasel-words/weasel.js
+@@ -34,6 +34,7 @@ var exceptions = [
+ ]
+ 
+ var re = new RegExp('\\b(' + weasels.join('|') + ')\\b', 'gi');
++var match;
+ 
+ module.exports = function (text, opts) {
+   var suggestions = [];

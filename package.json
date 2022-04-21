@@ -21,9 +21,10 @@
   "logseq": {
     "id": "logseq-writegood-plugin",
     "title": "logseq-writegood-plugin",
-    "icon": ""
+    "icon": "./icon.svg"
   },
   "devDependencies": {
+    "@types/write-good": "^1.0.1",
     "parcel": "latest"
   }
 }

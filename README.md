@@ -17,6 +17,12 @@ If not available from the marketplace, please download the release and manually 
 3. Do note that the plugin can be used everywhere except the main page with the list of running journal entries.
 4. As the suggestions are provided by an external package, any errors or requests of the actual suggestions should be made directly to the package repository [here](https://github.com/btford/write-good).
 
+# Customisation
+
+From the plugin settings, you can some customisations to how your suggestions are set up.
+
+![](/screenshots/settings.png)
+
 # Credits
 
 [write-good](https://github.com/btford/write-good)

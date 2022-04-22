@@ -11,7 +11,7 @@ const updateBlocks = async (
     // Add suggestion to suggestions block
     await logseq.Editor.insertBlock(
       suggestionsBlock.uuid,
-      `${suggestion[0].reason} [🔖](${b.uuid})`,
+      `${suggestion[0].reason} [${logseq.settings.suggestionRefChar}](${b.uuid})`,
       { sibling: false, before: false }
     );
     if (!b.properties?.id) {
@@ -36,7 +36,7 @@ const updateBlocks = async (
       // Add suggestion to suggestions block
       await logseq.Editor.insertBlock(
         suggestionsBlock.uuid,
-        `${suggestion[i].reason} [🔖](${b.uuid})`,
+        `${suggestion[i].reason} [${logseq.settings.suggestionRefChar}](${b.uuid})`,
         { sibling: false, before: false }
       );
       if (!b.properties?.id) {

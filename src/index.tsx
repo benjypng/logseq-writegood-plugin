@@ -1,15 +1,12 @@
 import "@logseq/libs";
 import { BlockEntity } from "@logseq/libs/dist/LSPlugin.user";
 import { appendHighlights } from "./appendHighlights";
+import { callSettings } from "./callSettings";
 
 const main = () => {
   console.log("logseq-writegood-plugin loaded");
 
-  // Get each block on the page (need recursive)
-  // Check each block and highlight errors
-  // Create section at the end
-  // Insert suggestions
-  // How to actually handle multiple edits - maybe can ignore a particular section header
+  callSettings();
 
   logseq.provideModel({
     async check() {
@@ -28,7 +25,7 @@ const main = () => {
 
       const suggestionsBlock = await logseq.Editor.insertBlock(
         currPage.name,
-        "## Suggestions",
+        `${logseq.settings.suggestionBlk}`,
         { isPageBlock: true }
       );
 

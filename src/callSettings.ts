@@ -1,6 +1,6 @@
 import { SettingSchemaDesc } from "@logseq/libs/dist/LSPlugin";
 
-export const callSettings = () => {
+export function callSettings() {
   const settings: SettingSchemaDesc[] = [
     {
       key: "suggestionBlk",
@@ -21,4 +21,4 @@ export const callSettings = () => {
   ];
 
   logseq.useSettingsSchema(settings);
-};
+}

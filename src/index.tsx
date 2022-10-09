@@ -3,8 +3,10 @@ import { BlockEntity } from "@logseq/libs/dist/LSPlugin.user";
 import { appendHighlights } from "./appendHighlights";
 import { callSettings } from "./callSettings";
 
-const main = () => {
+async function main() {
   console.log("logseq-writegood-plugin loaded");
+
+  const userConfigs = await logseq.App.getUserConfigs();
 
   callSettings();
 
@@ -29,7 +31,11 @@ const main = () => {
         { isPageBlock: true }
       );
 
-      await appendHighlights(pageBT, suggestionsBlock);
+      await appendHighlights(
+        pageBT,
+        suggestionsBlock,
+        userConfigs.preferredFormat
+      );
     },
   });
 
@@ -37,6 +43,6 @@ const main = () => {
     key: "logseq-writegood-plugin",
     template: `<a data-on-click="check" class="button"><i class="ti ti-vocabulary"></i></a>`,
   });
-};
+}
 
 logseq.ready(main).catch(console.error);
